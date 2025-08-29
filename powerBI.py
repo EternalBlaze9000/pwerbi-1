@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 #------------------------------------------------------------------
 #3 display table function
@@ -103,6 +103,7 @@ if uploaded_file is not None:
     create_table_from_arrays(numeric_headers, non_numeric_headers)
     if st.checkbox("display Graphs"):
         displayGraph()
+
 
 
 
