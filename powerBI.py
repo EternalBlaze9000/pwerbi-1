@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #------------------------------------------------------------------
 #3 display table function
@@ -70,11 +71,9 @@ def displayGraph():
         pie_data = df[colx].value_counts()
         st.write(f"Pie chart for **{colx}**")
     
-        # Create a matplotlib figure
         fig, ax = plt.subplots()
         pie_data.plot.pie(autopct="%1.1f%%", ax=ax)
     
-        # Pass the figure to Streamlit
         st.pyplot(fig)
     else:
         st.write(f"Bar chart for **{colx}** and **{coly}**")
@@ -104,6 +103,7 @@ if uploaded_file is not None:
     create_table_from_arrays(numeric_headers, non_numeric_headers)
     if st.checkbox("display Graphs"):
         displayGraph()
+
 
 
 
